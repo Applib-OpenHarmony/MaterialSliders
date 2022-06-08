@@ -1,0 +1,11 @@
+{
+  "name": "libslider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/slider.ets",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bibek Lakra",
+  "license": "ISC"
+}
