@@ -9,8 +9,6 @@ Modified slider library design in openharmony.
 ## Continuous Slider
 ```ets
 import { SliderContinue }  from '@ohos/libSlider'
-```
-
       SliderContinue({
         sliderType : "outset",
         min : 100,
@@ -24,7 +22,11 @@ import { SliderContinue }  from '@ohos/libSlider'
         trackColor : "#D0D0D0",
         selectedColor : "#ff0477ff"
       })
+```
+!(https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
 
+```ets
+import { SliderContinue }  from '@ohos/libSlider'
       SliderContinue({
         sliderType : "inset",
         min : 0,
@@ -38,12 +40,12 @@ import { SliderContinue }  from '@ohos/libSlider'
         trackColor :  "#D0D0D0",
         selectedColor : "#ff0477ff"
       })
+```
+!(https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
 
 ## Discrete Slider: 
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
-```
-
       SliderDiscrete({
         sliderType : "outset",
         min : 1000,
@@ -57,7 +59,11 @@ import { SliderDiscrete }  from '@ohos/libSlider'
         trackColor : "#D0D0D0",
         selectedColor : "#ff0477ff"
       })
+```
+!(https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider-dis.png)
 
+```ets
+import { SliderDiscrete }  from '@ohos/libSlider'
       SliderDiscrete({
         sliderType : "inset",
         min : 0,
@@ -71,6 +77,11 @@ import { SliderDiscrete }  from '@ohos/libSlider'
         trackColor :  "#D0D0D0",
         selectedColor : "#ff0477ff"
       })
+```
+!(https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider_dis.png)
+
+            
+      
 
 
 ## Compatibility
