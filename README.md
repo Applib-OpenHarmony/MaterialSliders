@@ -4,7 +4,9 @@ It is a slider library in ETS. It contains two types of sliders - continuous and
 
 ## Installation
 
-```npm install https://github.com/Applib-OpenHarmony/Material_UI_Sliders```
+```ets 
+npm install https://github.com/Applib-OpenHarmony/Material_UI_Sliders
+```
 
 ## Usage Instruction
 
