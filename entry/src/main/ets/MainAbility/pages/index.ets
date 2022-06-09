@@ -32,6 +32,7 @@ struct Index {
           .shadow({ radius : 15, color : "#D0D0D0",offsetY: 8})
           .lineCap(LineCapStyle.Round)
       }.height('5%')
+      Text('Outset Continuous Slider').fontSize(20).fontColor("black").width('90%')
       SliderContinue({
         sliderType : "outset",
         min : 100,
@@ -45,6 +46,7 @@ struct Index {
         trackColor : "#D0D0D0",
         selectedColor : "#ff0477ff"
       })
+      Text('Inset continuous Slider').fontSize(20).fontColor("black").width('90%')
       SliderContinue({
         sliderType : "inset",
         min : 0,
@@ -58,6 +60,7 @@ struct Index {
         trackColor :  "#D0D0D0",
         selectedColor : "#ff0477ff"
       })
+      Text('Outset Discrete Slider').fontSize(20).fontColor("black").width('90%')
       SliderDiscrete({
         sliderType : "outset",
         min : 1000,
@@ -71,6 +74,7 @@ struct Index {
         trackColor : "#D0D0D0",
         selectedColor : "#ff0477ff"
       })
+      Text('Inset Discrete Slider').fontSize(20).fontColor("black").width('90%')
       SliderDiscrete({
         sliderType : "inset",
         min : 0,
