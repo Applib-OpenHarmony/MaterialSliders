@@ -7,7 +7,7 @@ It is a slider library in ETS. It contains two types of sliders - continuous and
 ```npm install https://github.com/Applib-OpenHarmony/Material_UI_Sliders```
 
 ## Continuous Slider
-####1.
+#### 1.
 ```ets
 import { SliderContinue }  from '@ohos/libSlider'
       SliderContinue({
@@ -25,7 +25,7 @@ import { SliderContinue }  from '@ohos/libSlider'
       })
 ```
 ![outset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
-####2
+#### 2.
 ```ets
 import { SliderContinue }  from '@ohos/libSlider'
       SliderContinue({
@@ -45,7 +45,7 @@ import { SliderContinue }  from '@ohos/libSlider'
 ![inset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
 
 ## Discrete Slider
-####1.
+#### 1.
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
       SliderDiscrete({
@@ -63,7 +63,7 @@ import { SliderDiscrete }  from '@ohos/libSlider'
       })
 ```
 ![outset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider-dis.png)
-####2.
+#### 2.
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
       SliderDiscrete({
