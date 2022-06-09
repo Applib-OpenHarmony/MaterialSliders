@@ -7,12 +7,21 @@ It is a slider library in ETS. It contains two types of sliders - continuous and
 ```npm install https://github.com/Applib-OpenHarmony/Material_UI_Sliders```
 
 ## Usage Instruction
+To be able to use both sliders below import statement should be used
 ```ets
 import { SliderContinue, SliderDiscrete } from '@ohos/libSlider'
 ```
+If only continuous slider is to be used, then below import statement can be used
+```ets
+import { SliderContinue } from '@ohos/libSlider'
+```
+Similarly, if only discrete slider is to be used, then below import statement can be used
+```ets
+import { SliderDiscrete } from '@ohos/libSlider'
+```
 
 ## Continuous Slider
-#### 1. Outset
+
 ![outset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
 ```ets
 import { SliderContinue }  from '@ohos/libSlider'
@@ -31,7 +40,6 @@ import { SliderContinue }  from '@ohos/libSlider'
       })
 ```
 
-#### 2. Inset
 ![inset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
 ```ets
 import { SliderContinue }  from '@ohos/libSlider'
@@ -51,9 +59,10 @@ import { SliderContinue }  from '@ohos/libSlider'
 ```
 
 ## Discrete Slider
-#### 1. Outset
+
 ![outset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider_dis.png)
 ```ets
+
 import { SliderDiscrete }  from '@ohos/libSlider'
       SliderDiscrete({
         sliderType : "outset",
@@ -69,7 +78,7 @@ import { SliderDiscrete }  from '@ohos/libSlider'
         selectedColor : "#ff0477ff"
       })
 ```
-#### 2. Inset
+
 ![inset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider_dis.png)
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
