@@ -1,12 +1,13 @@
 # Material_UI_Sliders
 
-Modified slider library design in openharmony.
+It is a slider library in ETS. It has two basic types of sliders - continuous and discrete and supports all attributes of ETS slider which are already present in API version 8
 
-## Install Slider Lib using:
+## Installation
 
-```npm i ohos-libSlider```
+```npm install https://github.com/Applib-OpenHarmony/Material_UI_Sliders```
 
 ## Continuous Slider
+####1.
 ```ets
 import { SliderContinue }  from '@ohos/libSlider'
       SliderContinue({
@@ -24,7 +25,7 @@ import { SliderContinue }  from '@ohos/libSlider'
       })
 ```
 ![outset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
-
+####2
 ```ets
 import { SliderContinue }  from '@ohos/libSlider'
       SliderContinue({
@@ -43,7 +44,8 @@ import { SliderContinue }  from '@ohos/libSlider'
 ```
 ![inset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
 
-## Discrete Slider: 
+## Discrete Slider
+####1.
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
       SliderDiscrete({
@@ -61,7 +63,7 @@ import { SliderDiscrete }  from '@ohos/libSlider'
       })
 ```
 ![outset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider-dis.png)
-
+####2.
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
       SliderDiscrete({
@@ -79,10 +81,6 @@ import { SliderDiscrete }  from '@ohos/libSlider'
       })
 ```
 ![inset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider_dis.png)
-
-            
-      
-
 
 ## Compatibility
 Supports OpenHarmony API version 8
