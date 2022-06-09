@@ -29,7 +29,6 @@ export struct SliderContinue{
   build() {
     Column({ space: 5 }) {
       if (this.sliderType == "outset") {
-        Text('slider out set').fontSize(20).fontColor("black").width('90%')
         Slider({
           value: this.outSetValue,
           min: this.min,
@@ -49,7 +48,6 @@ export struct SliderContinue{
         Text(this.outSetValue.toFixed(0)).fontSize(16)
       }
       else if(this.sliderType == "inset") {
-        Text('slider in set').fontSize(20).fontColor("black").width('90%')
         Slider({
           value: this.inSetValue,
           min: this.min,
@@ -88,7 +86,6 @@ export struct SliderDiscrete{
   build(){
     Column({ space: 5 }) {
       if(this.sliderType == "outset"){
-        Text('slider out set - Discrete').fontSize(20).fontColor("black").width('90%')
         Slider({
           value: this.outSetValue,
           min: this.min,
@@ -108,7 +105,6 @@ export struct SliderDiscrete{
         Text(this.outSetValue.toFixed(0)).fontSize(16)
       }
       else if(this.sliderType == "inset"){
-        Text('slider in set - Discrete').fontSize(20).fontColor("black").width('90%')
         Slider({
           value: this.inSetValue,
           min: this.min,
