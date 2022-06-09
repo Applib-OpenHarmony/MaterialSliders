@@ -23,7 +23,7 @@ import { SliderContinue }  from '@ohos/libSlider'
         selectedColor : "#ff0477ff"
       })
 ```
-!(https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
+![outset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
 
 ```ets
 import { SliderContinue }  from '@ohos/libSlider'
@@ -41,7 +41,7 @@ import { SliderContinue }  from '@ohos/libSlider'
         selectedColor : "#ff0477ff"
       })
 ```
-!(https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
+![inset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
 
 ## Discrete Slider: 
 ```ets
@@ -60,7 +60,7 @@ import { SliderDiscrete }  from '@ohos/libSlider'
         selectedColor : "#ff0477ff"
       })
 ```
-!(https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider-dis.png)
+![outset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider-dis.png)
 
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
@@ -78,7 +78,7 @@ import { SliderDiscrete }  from '@ohos/libSlider'
         selectedColor : "#ff0477ff"
       })
 ```
-!(https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider_dis.png)
+![inset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider_dis.png)
 
             
       
