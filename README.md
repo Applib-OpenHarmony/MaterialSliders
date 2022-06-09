@@ -25,8 +25,8 @@ import { SliderDiscrete } from '@ohos/libSlider'
 
 ## Continuous Slider
 
-      ![outset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
-      ```ets
+-outset
+```ets
       import { SliderContinue }  from '@ohos/libSlider'
             SliderContinue({
               sliderType : "outset",
@@ -42,13 +42,13 @@ import { SliderDiscrete } from '@ohos/libSlider'
               selectedColor : "#ff0477ff"
             })
       ```
+![outset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
 
-
-      ![inset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
-      ```ets
-      import { SliderContinue }  from '@ohos/libSlider'
-            SliderContinue({
-              sliderType : "inset",
+-Inset
+```ets
+import { SliderContinue }  from '@ohos/libSlider'
+      SliderContinue({
+        sliderType : "inset",
               min : 0,
               max: 100,
               step : 1,
@@ -60,16 +60,15 @@ import { SliderDiscrete } from '@ohos/libSlider'
               trackColor :  "#D0D0D0",
               selectedColor : "#ff0477ff"
             })
-      ```
+```
 
 ## Discrete Slider
 
-      ![outset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider_dis.png)
-      ```ets
-
-      import { SliderDiscrete }  from '@ohos/libSlider'
-            SliderDiscrete({
-              sliderType : "outset",
+-Outset
+```ets
+import { SliderDiscrete }  from '@ohos/libSlider'
+      SliderDiscrete({
+        sliderType : "outset",
               min : 1000,
               max: 10000,
               step : 1000,
@@ -80,15 +79,16 @@ import { SliderDiscrete } from '@ohos/libSlider'
               blockColor : "#ff0477ff",
               trackColor : "#D0D0D0",
               selectedColor : "#ff0477ff"
-            })
-      ```
+            })            
+```
+![outset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider_dis.png)
+      
 
-
-      ![inset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider_dis.png)
-      ```ets
-      import { SliderDiscrete }  from '@ohos/libSlider'
-            SliderDiscrete({
-              sliderType : "inset",
+-Inset
+```ets
+import { SliderDiscrete }  from '@ohos/libSlider'
+      SliderDiscrete({
+        sliderType : "inset",
               min : 0,
               max: 100,
               step : 10,
@@ -100,7 +100,9 @@ import { SliderDiscrete } from '@ohos/libSlider'
               trackColor :  "#D0D0D0",
               selectedColor : "#ff0477ff"
             })
-      ```
+```
+![inset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider_dis.png)
+      
 
 ## Compatibility
 Supports OpenHarmony API version 8
