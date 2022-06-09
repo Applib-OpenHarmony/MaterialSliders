@@ -25,7 +25,7 @@ import { SliderDiscrete } from '@ohos/libSlider'
 
 ## Continuous Slider
 
--outset
+##### 1. Outset
 ```ets
       import { SliderContinue }  from '@ohos/libSlider'
             SliderContinue({
@@ -41,10 +41,10 @@ import { SliderDiscrete } from '@ohos/libSlider'
               trackColor : "#D0D0D0",
               selectedColor : "#ff0477ff"
             })
-      ```
+```
 ![outset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
 
--Inset
+##### 2. Inset
 ```ets
 import { SliderContinue }  from '@ohos/libSlider'
       SliderContinue({
@@ -64,7 +64,7 @@ import { SliderContinue }  from '@ohos/libSlider'
 
 ## Discrete Slider
 
--Outset
+##### 1. Outset
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
       SliderDiscrete({
@@ -84,7 +84,7 @@ import { SliderDiscrete }  from '@ohos/libSlider'
 ![outset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider_dis.png)
       
 
--Inset
+##### 2. Inset
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
       SliderDiscrete({
