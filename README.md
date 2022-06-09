@@ -16,11 +16,13 @@ import { SliderContinue, SliderDiscrete } from '@ohos/libSlider'
 ```
 
 ## Continuous Slider
+```ets
+import { SliderContinue }  from '@ohos/libSlider'
+```
 
 ##### 1. Outset
 ```ets
-import { SliderContinue }  from '@ohos/libSlider'
-      SliderContinue({
+SliderContinue({
         sliderType : "outset",
               min : 100,
               max: 1000,
@@ -38,8 +40,7 @@ import { SliderContinue }  from '@ohos/libSlider'
 
 ##### 2. Inset
 ```ets
-import { SliderContinue }  from '@ohos/libSlider'
-      SliderContinue({
+SliderContinue({
         sliderType : "inset",
               min : 0,
               max: 100,
@@ -55,11 +56,12 @@ import { SliderContinue }  from '@ohos/libSlider'
 ```
 
 ## Discrete Slider
-
-##### 1. Outset
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
-      SliderDiscrete({
+```
+##### 1. Outset
+```ets
+SliderDiscrete({
         sliderType : "outset",
               min : 1000,
               max: 10000,
@@ -78,8 +80,7 @@ import { SliderDiscrete }  from '@ohos/libSlider'
 
 ##### 2. Inset
 ```ets
-import { SliderDiscrete }  from '@ohos/libSlider'
-      SliderDiscrete({
+SliderDiscrete({
         sliderType : "inset",
               min : 0,
               max: 100,
