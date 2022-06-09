@@ -1,6 +1,6 @@
 # Material_UI_Sliders
 
-It is a slider library in ETS. It has two basic types of sliders - continuous and discrete and supports all attributes of ETS slider which are already present in API version 8
+It is a slider library in ETS. It contains two types of sliders - continuous and discrete and supports all attributes of ETS slider which are already present in API version 8
 
 ## Installation
 
