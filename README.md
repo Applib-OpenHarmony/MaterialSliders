@@ -6,8 +6,14 @@ It is a slider library in ETS. It contains two types of sliders - continuous and
 
 ```npm install https://github.com/Applib-OpenHarmony/Material_UI_Sliders```
 
+## Usage Instruction
+```ets
+import { SliderContinue, SliderDiscrete } from '@ohos/libSlider'
+```
+
 ## Continuous Slider
-#### 1.
+#### 1. Outset
+![outset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
 ```ets
 import { SliderContinue }  from '@ohos/libSlider'
       SliderContinue({
@@ -24,8 +30,9 @@ import { SliderContinue }  from '@ohos/libSlider'
         selectedColor : "#ff0477ff"
       })
 ```
-![outset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
-#### 2.
+
+#### 2. Inset
+![inset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
 ```ets
 import { SliderContinue }  from '@ohos/libSlider'
       SliderContinue({
@@ -42,10 +49,10 @@ import { SliderContinue }  from '@ohos/libSlider'
         selectedColor : "#ff0477ff"
       })
 ```
-![inset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
 
 ## Discrete Slider
-#### 1.
+#### 1. Outset
+![outset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider_dis.png)
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
       SliderDiscrete({
@@ -62,8 +69,8 @@ import { SliderDiscrete }  from '@ohos/libSlider'
         selectedColor : "#ff0477ff"
       })
 ```
-![outset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider-dis.png)
-#### 2.
+#### 2. Inset
+![inset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider_dis.png)
 ```ets
 import { SliderDiscrete }  from '@ohos/libSlider'
       SliderDiscrete({
@@ -80,7 +87,6 @@ import { SliderDiscrete }  from '@ohos/libSlider'
         selectedColor : "#ff0477ff"
       })
 ```
-![inset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider_dis.png)
 
 ## Compatibility
 Supports OpenHarmony API version 8
