@@ -8,28 +8,18 @@ It is a slider library in ETS. It contains two types of sliders - continuous and
 
 ## Usage Instruction
 
-To be able to use both sliders below import statement should be used
+To be able to use both sliders, below import statement should be used
 ```ets
 import { SliderContinue, SliderDiscrete } from '@ohos/libSlider'
-```
-
-If only continuous slider is to be used, then below import statement can be used
-```ets
-import { SliderContinue } from '@ohos/libSlider'
-```
-
-Similarly, if only discrete slider is to be used, then below import statement can be used
-```ets
-import { SliderDiscrete } from '@ohos/libSlider'
 ```
 
 ## Continuous Slider
 
 ##### 1. Outset
 ```ets
-      import { SliderContinue }  from '@ohos/libSlider'
-            SliderContinue({
-              sliderType : "outset",
+import { SliderContinue }  from '@ohos/libSlider'
+      SliderContinue({
+        sliderType : "outset",
               min : 100,
               max: 1000,
               step : 1,
