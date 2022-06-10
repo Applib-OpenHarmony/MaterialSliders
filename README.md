@@ -54,6 +54,7 @@ SliderContinue({
               selectedColor : "#ff0477ff"
             })
 ```
+![inset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
 
 ## Discrete Slider
 ```ets
