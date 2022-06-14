@@ -76,7 +76,6 @@ struct Index {
     this.sliderModel3.setTrackColor("#D0D0D0")
     this.sliderModel3.setSelectedColor("#ff0477ff")
 
-
     this.sliderModel4.setSliderType("inset")
     this.sliderModel4.setMin(0)
     this.sliderModel4.setMax(100)
