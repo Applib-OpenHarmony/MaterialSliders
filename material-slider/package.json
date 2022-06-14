@@ -1,5 +1,5 @@
 {
-  "name": "@ohos/libSlider",
+  "name": "@ohos/material-slider",
   "version": "1.0.0",
   "description": "",
   "main": "src/slider.ets",
