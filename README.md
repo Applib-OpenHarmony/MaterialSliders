@@ -16,20 +16,38 @@ To be able to use both sliders, below import statement should be used
 ```ets
 import { SliderContinue, SliderDiscrete, SliderModel } from '@ohos/material-slider'
 ```
-Access slider attributes through a object of SliderModel and 
-customize the slider(if needed) using set functions as shown and finally pass the object 
-to SliderContinue or SliderDiscrete.
+
+Access slider attributes through a object of SliderModel and customize the slider(if needed) using set functions as
+shown and finally pass the object to SliderContinue or SliderDiscrete.
 <br>
 
 **Note:** SliderModel is mandatory to import because the user can only modify the slider from object of SliderModel
 class. And the user can import SliderContinue or SliderDiscrete or both, ont the basis of slider requirement. The user
 can customise the slider from set functions or can use default slider provided.
 
-**Note:** Set functions are used to pass value to corresponding slider attributes. For example :
-setMin(value) will map 'value' to min, where min is a slider attribute.
+```ets
+Set Functions --> Working
+Slider Attributes:
+-setSliderType --> assign value to 'sliderType'
+-setMin --> assign value to 'min'
+-setMax --> assign value to 'max'
+-setStep --> assign value to 'step'
+-setShowSteps --> assign value to 'showSteps'
+-setShowTips --> assign value to 'showTips'
+-setTrackThickness --> assign value to 'trackThickness'
+-setReverse --> assign value to 'reverse'
+-setDirection --> assign value to 'direction'
+-setBlockColor --> assign value to 'blockColor'
+-setTrackColor --> assign value to 'trackColor'
+-setSelectedColor --> assign value to 'selectedColor'
 
-**Note:** setOutSetValue() and setInSetValue() are two function do not map to any slider attribute, rather they pass
-values which are used to set default values of outset type and inset type slider respectively.
+Custom Attributes:
+-setOutSetValue --> assign default value to outset type slider
+-setInSetValue --> assign default value to inset type slider
+-setShowValue --> decide whether to show current value of slider or not
+-setShowMin --> decide whether to show minimum value of slider or not
+-setShowMax --> decide whether to show maximum value of slider or not
+```
 
 ## Continuous Slider
 
@@ -106,7 +124,9 @@ SliderContinue({
 ```
 
 ![inset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
+
 ## Discrete Slider
+
 ```ets
 import { SliderDiscrete, SliderModel }  from '@ohos/material-slider'
 ```

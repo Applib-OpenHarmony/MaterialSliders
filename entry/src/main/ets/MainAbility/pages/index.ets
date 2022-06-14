@@ -20,9 +20,9 @@ struct Index {
   scroller: Scroller = new Scroller()
   @State message: string = 'Basic Sliders'
   private sliderModel1: SliderModel = new SliderModel(1, "sliderContinue-outset")
-  private sliderModel2: SliderModel = new SliderModel(2, "sliderContinue-inset")
-  private sliderModel3: SliderModel = new SliderModel(3, "sliderDiscrete-outset")
-  private sliderModel4: SliderModel = new SliderModel(4, "sliderDiscrete-inset")
+  private sliderModel2: SliderModel = new SliderModel(1, "sliderContinue-inset")
+  private sliderModel3: SliderModel = new SliderModel(2, "sliderDiscrete-outset")
+  private sliderModel4: SliderModel = new SliderModel(2, "sliderDiscrete-inset")
 
   aboutToAppear() {
     this.sliderModel1.setSliderType("outset")
@@ -34,6 +34,9 @@ struct Index {
     this.sliderModel1.setShowTips(true)
     this.sliderModel1.setTrackThickness(8)
     this.sliderModel1.setReverse(false)
+    this.sliderModel1.setShowValue(true)
+    this.sliderModel1.setShowMin(false)
+    this.sliderModel1.setShowMax(false)
     this.sliderModel1.setDirection(Axis.Horizontal)
     this.sliderModel1.setBlockColor("#ff0477ff")
     this.sliderModel1.setTrackColor("#D0D0D0")
@@ -48,6 +51,9 @@ struct Index {
     this.sliderModel2.setShowTips(true)
     this.sliderModel2.setTrackThickness(15)
     this.sliderModel2.setReverse(false)
+    this.sliderModel2.setShowValue(true)
+    this.sliderModel2.setShowMin(false)
+    this.sliderModel2.setShowMax(false)
     this.sliderModel2.setDirection(Axis.Horizontal)
     this.sliderModel2.setBlockColor(Color.White)
     this.sliderModel2.setTrackColor("#D0D0D0")
@@ -62,10 +68,14 @@ struct Index {
     this.sliderModel3.setShowTips(true)
     this.sliderModel3.setTrackThickness(8)
     this.sliderModel3.setReverse(false)
+    this.sliderModel3.setShowValue(true)
+    this.sliderModel3.setShowMin(false)
+    this.sliderModel3.setShowMax(false)
     this.sliderModel3.setDirection(Axis.Horizontal)
     this.sliderModel3.setBlockColor("#ff0477ff")
     this.sliderModel3.setTrackColor("#D0D0D0")
     this.sliderModel3.setSelectedColor("#ff0477ff")
+
 
     this.sliderModel4.setSliderType("inset")
     this.sliderModel4.setMin(0)
@@ -76,6 +86,9 @@ struct Index {
     this.sliderModel4.setShowTips(true)
     this.sliderModel4.setTrackThickness(15)
     this.sliderModel4.setReverse(false)
+    this.sliderModel4.setShowValue(true)
+    this.sliderModel4.setShowMin(false)
+    this.sliderModel4.setShowMax(false)
     this.sliderModel4.setDirection(Axis.Horizontal)
     this.sliderModel4.setBlockColor(Color.White)
     this.sliderModel4.setTrackColor("#D0D0D0")
@@ -98,7 +111,6 @@ struct Index {
             .lineCap(LineCapStyle.Round)
         }.height('5%')
 
-        Slider()
         Text('Outset Continuous Slider').fontSize(20).fontColor("black").width('90%')
         SliderContinue({
           obj: this.sliderModel1

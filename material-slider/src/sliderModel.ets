@@ -15,20 +15,24 @@
 export class SliderModel {
   private sliderId: number = undefined
   private sliderLabel: string | Resource = undefined
-  sliderType: string = "outset"
-  min: number = 0
-  max: number = 100
-  step: number = 1
-  showSteps: boolean = false
-  showTips: boolean = false
-  trackThickness: number = undefined
-  outSetValue: number = 40
-  inSetValue: number = 40
-  reverse: boolean = false
-  direction: Axis = Axis.Horizontal
-  blockColor: string | ResourceColor = "#ff0477ff"
-  trackColor: string | ResourceColor = "#D0D0D0"
-  selectedColor: string | ResourceColor = "#ff0477ff"
+  private sliderType: string = "outset"
+  private min: number = 0
+  private max: number = 100
+  private step: number = 1
+  private showSteps: boolean = false
+  private showTips: boolean = false
+  private trackThickness: number = 8
+  private outSetValue: number = 40
+  private inSetValue: number = 40
+  private reverse: boolean = false
+  private direction: Axis = Axis.Horizontal
+  private showMin: boolean = false
+  private showMax: boolean = false
+  private showValue: boolean = false
+  private blockColor: string | ResourceColor = "#ff0477ff"
+  private trackColor: string | ResourceColor = "#D0D0D0"
+  private selectedColor: string | ResourceColor = "#ff0477ff"
+
   constructor(id: number, label: string | Resource) {
     this.sliderId = id
     this.sliderLabel = label
@@ -36,6 +40,14 @@ export class SliderModel {
 
   setSliderType(value: string): SliderModel{
     this.sliderType = value
+    if (value == "inset") {
+      this.setBlockColor(Color.White)
+      this.setTrackThickness(15)
+    }
+    if (this.sliderId == 2) {
+      this.setShowSteps(true)
+      this.setStep(10)
+    }
     return this
   }
 
@@ -158,5 +170,32 @@ export class SliderModel {
 
   getSelectedColor(): string | ResourceColor{
     return this.selectedColor
+  }
+
+  setShowMin(value: boolean): SliderModel{
+    this.showMin = value
+    return this
+  }
+
+  getShowMin(): boolean{
+    return this.showMin
+  }
+
+  setShowMax(value: boolean): SliderModel{
+    this.showMax = value
+    return this
+  }
+
+  getShowMax(): boolean{
+    return this.showMax
+  }
+
+  setShowValue(value: boolean): SliderModel{
+    this.showValue = value
+    return this
+  }
+
+  getShowValue(): boolean{
+    return this.showValue
   }
 }

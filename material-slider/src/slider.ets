@@ -17,8 +17,6 @@ import { SliderModel } from '@ohos/material-slider'
 @Component
 export struct SliderContinue {
   @State obj: SliderModel = new SliderModel(1, "sliderContinue")
-  @State outSetValue: number = 40
-  @State inSetValue: number = 40
 
   build() {
     Column({ space: 5 }) {
@@ -41,7 +39,25 @@ export struct SliderContinue {
           .onChange((value: number, mode: SliderChangeMode) => {
             this.obj.setOutSetValue(value)
           })
-        Text(this.obj.getOutSetValue().toFixed(0)).fontSize(16)
+        Row() {
+          Column() {
+            if (this.obj.getShowMin()) {
+              Text(this.obj.getMin().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+
+          Column() {
+            if (this.obj.getShowValue()) {
+              Text(this.obj.getOutSetValue().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+
+          Column() {
+            if (this.obj.getShowMax()) {
+              Text(this.obj.getMax().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+        }
       }
       else if (this.obj.getSliderType() == "inset") {
         Slider({
@@ -62,7 +78,25 @@ export struct SliderContinue {
           .onChange((value: number, mode: SliderChangeMode) => {
             this.obj.setInSetValue(value)
           })
-        Text(this.obj.getInSetValue().toFixed(0)).fontSize(16)
+        Row() {
+          Column() {
+            if (this.obj.getShowMin()) {
+              Text(this.obj.getMin().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+
+          Column() {
+            if (this.obj.getShowValue()) {
+              Text(this.obj.getInSetValue().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+
+          Column() {
+            if (this.obj.getShowMax()) {
+              Text(this.obj.getMax().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+        }
       }
     }
   }
@@ -71,8 +105,6 @@ export struct SliderContinue {
 @Component
 export struct SliderDiscrete {
   @State obj: SliderModel = new SliderModel(2, "sliderDiscrete")
-  @State outSetValue: number = 40
-  @State inSetValue: number = 40
 
   build() {
     Column({ space: 5 }) {
@@ -95,7 +127,25 @@ export struct SliderDiscrete {
           .onChange((value: number, mode: SliderChangeMode) => {
             this.obj.setOutSetValue(value)
           })
-        Text(this.obj.getOutSetValue().toFixed(0)).fontSize(16)
+        Row() {
+          Column() {
+            if (this.obj.getShowMin()) {
+              Text(this.obj.getMin().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+
+          Column() {
+            if (this.obj.getShowValue()) {
+              Text(this.obj.getOutSetValue().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+
+          Column() {
+            if (this.obj.getShowMax()) {
+              Text(this.obj.getMax().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+        }
       }
       else if (this.obj.getSliderType() == "inset") {
         Slider({
@@ -116,7 +166,25 @@ export struct SliderDiscrete {
           .onChange((value: number = null, mode: SliderChangeMode) => {
             this.obj.setInSetValue(value)
           })
-        Text(this.obj.getInSetValue().toFixed(0)).fontSize(16)
+        Row() {
+          Column() {
+            if (this.obj.getShowMin()) {
+              Text(this.obj.getMin().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+
+          Column() {
+            if (this.obj.getShowValue()) {
+              Text(this.obj.getInSetValue().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+
+          Column() {
+            if (this.obj.getShowMax()) {
+              Text(this.obj.getMax().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+        }
       }
     }
   }
