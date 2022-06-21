@@ -82,7 +82,7 @@ export class SliderModel {
   }
 
   setShowSteps(value: boolean) {
-    if(this.sliderType==SliderType.Discrete) this.showSteps = (value == null || value == undefined) ? true : value
+    if (this.sliderType == SliderType.Discrete) this.showSteps = (value == null || value == undefined) ? true : value
     else this.showSteps = (value == null || value == undefined) ? false : value
   }
 
@@ -112,9 +112,9 @@ export class SliderModel {
 
   setCurrentValue(value: number) {
     var auto = this.max
-    if(value!=null && value<this.min) auto = this.min
-    else if (value!=null && value>this.max) auto = this.max
-    this.currentValue = (value == null || value == undefined || value > this.max || value<this.min) ? auto : value
+    if (value != null && value < this.min) auto = this.min
+    else if (value != null && value > this.max) auto = this.max
+    this.currentValue = (value == null || value == undefined || value > this.max || value < this.min) ? auto : value
   }
 
   getCurrentValue(): number{
