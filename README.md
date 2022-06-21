@@ -6,7 +6,7 @@ ETS slider which are already present in OpenHarmony API version 8, along with so
 ## Installation
 
 ```ets 
-npm install https://github.com/Applib-OpenHarmony/Material_UI_Sliders
+npm install https://github.com/Applib-OpenHarmony/MaterialSliders
 ```
 
 ## Usage Instruction
