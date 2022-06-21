@@ -1,8 +1,4 @@
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request_target, workflow_dispatch]
 
 jobs:
   hello_world_job:
@@ -22,10 +18,20 @@ jobs:
           node-version: '14'
       - id: main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: "f84cc9dbc437cd0eb2ad378978b9dfa6c673e0f9"
           LANG: JS
         uses: Applib-OpenHarmony/OpenHarmony-build@v2.11
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with: 
