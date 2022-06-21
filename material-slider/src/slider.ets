@@ -12,182 +12,57 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { SliderModel } from '@ohos/material-slider'
+import { SliderModel, SliderType } from '@ohos/material-slider'
 
 @Component
-export struct SliderContinue {
-  @State obj: SliderModel = new SliderModel(1, "sliderContinue")
+export struct MaterialSlider {
+  @State obj: SliderModel = new SliderModel(SliderType.Continue)
+  private onCheckChange: ((value: number, mode: SliderChangeMode) => void) = null
 
   build() {
     Column({ space: 5 }) {
-      if (this.obj.getSliderType() == "outset") {
-        Slider({
-          value: this.obj.getOutSetValue(),
-          min: this.obj.getMin(),
-          max: this.obj.getMax(),
-          step: this.obj.getStep(),
-          direction: this.obj.getDirection(),
-          reverse: this.obj.getReverse(),
-          style: SliderStyle.OutSet
+      Slider({
+        value: this.obj.getCurrentValue(),
+        min: this.obj.getMin(),
+        max: this.obj.getMax(),
+        step: this.obj.getStep(),
+        direction: this.obj.getDirection(),
+        reverse: this.obj.getReverse(),
+        style: this.obj.getSliderStyle()
+      })
+        .blockColor(this.obj.getBlockColor())
+        .trackColor(this.obj.getTrackColor())
+        .selectedColor(this.obj.getSelectedColor())
+        .trackThickness(this.obj.getTrackThickness())
+        .showSteps(this.obj.getShowSteps())
+        .showTips(this.obj.getShowTips())
+        .onChange((value: number, mode: SliderChangeMode) => {
+          this.obj.setCurrentValue(value)
+          if (this.onCheckChange != null && this.onCheckChange != undefined) {
+            this.onCheckChange(this.obj.getCurrentValue(), mode)
+          }
         })
-          .blockColor(this.obj.getBlockColor())
-          .trackColor(this.obj.getTrackColor())
-          .selectedColor(this.obj.getSelectedColor())
-          .trackThickness(this.obj.getTrackThickness())
-          .showSteps(this.obj.getShowSteps())
-          .showTips(this.obj.getShowTips())
-          .onChange((value: number, mode: SliderChangeMode) => {
-            this.obj.setOutSetValue(value)
-          })
-        Row() {
-          Column() {
-            if (this.obj.getShowMin()) {
-              Text(this.obj.getMin().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
+      Row() {
+        Column() {
+          if (this.obj.getShowMin()) {
+            Text(this.obj.getMin().toFixed(0)).fontSize(16)
+          }
+        }.width('33%')
 
-          Column() {
-            if (this.obj.getShowValue()) {
-              Text(this.obj.getOutSetValue().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
+        Column() {
+          if (this.obj.getShowValue()) {
+            Text(this.obj.getCurrentValue().toFixed(0)).fontSize(16)
+          }
+        }.width('33%')
 
-          Column() {
-            if (this.obj.getShowMax()) {
-              Text(this.obj.getMax().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
-        }
-      }
-      else if (this.obj.getSliderType() == "inset") {
-        Slider({
-          value: this.obj.getInSetValue(),
-          min: this.obj.getMin(),
-          max: this.obj.getMax(),
-          step: this.obj.getStep(),
-          direction: this.obj.getDirection(),
-          reverse: this.obj.getReverse(),
-          style: SliderStyle.InSet,
-        })
-          .blockColor(this.obj.getBlockColor())
-          .trackColor(this.obj.getTrackColor())
-          .selectedColor(this.obj.getSelectedColor())
-          .trackThickness(this.obj.getTrackThickness())
-          .showSteps(this.obj.getShowSteps())
-          .showTips(this.obj.getShowTips())
-          .onChange((value: number, mode: SliderChangeMode) => {
-            this.obj.setInSetValue(value)
-          })
-        Row() {
-          Column() {
-            if (this.obj.getShowMin()) {
-              Text(this.obj.getMin().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
-
-          Column() {
-            if (this.obj.getShowValue()) {
-              Text(this.obj.getInSetValue().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
-
-          Column() {
-            if (this.obj.getShowMax()) {
-              Text(this.obj.getMax().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
-        }
+        Column() {
+          if (this.obj.getShowMax()) {
+            Text(this.obj.getMax().toFixed(0)).fontSize(16)
+          }
+        }.width('33%')
       }
     }
   }
 }
 
-@Component
-export struct SliderDiscrete {
-  @State obj: SliderModel = new SliderModel(2, "sliderDiscrete")
-
-  build() {
-    Column({ space: 5 }) {
-      if (this.obj.getSliderType() == "outset") {
-        Slider({
-          value: this.obj.getOutSetValue(),
-          min: this.obj.getMin(),
-          max: this.obj.getMax(),
-          step: this.obj.getStep(),
-          direction: this.obj.getDirection(),
-          reverse: this.obj.getReverse(),
-          style: SliderStyle.OutSet
-        })
-          .blockColor(this.obj.getBlockColor())
-          .trackColor(this.obj.getTrackColor())
-          .selectedColor(this.obj.getSelectedColor())
-          .trackThickness(this.obj.getTrackThickness())
-          .showSteps(this.obj.getShowSteps())
-          .showTips(this.obj.getShowTips())
-          .onChange((value: number, mode: SliderChangeMode) => {
-            this.obj.setOutSetValue(value)
-          })
-        Row() {
-          Column() {
-            if (this.obj.getShowMin()) {
-              Text(this.obj.getMin().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
-
-          Column() {
-            if (this.obj.getShowValue()) {
-              Text(this.obj.getOutSetValue().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
-
-          Column() {
-            if (this.obj.getShowMax()) {
-              Text(this.obj.getMax().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
-        }
-      }
-      else if (this.obj.getSliderType() == "inset") {
-        Slider({
-          value: this.obj.getInSetValue(),
-          min: this.obj.getMin(),
-          max: this.obj.getMax(),
-          step: this.obj.getStep(),
-          direction: this.obj.getDirection(),
-          reverse: this.obj.getReverse(),
-          style: SliderStyle.InSet,
-        })
-          .blockColor(this.obj.getBlockColor())
-          .trackColor(this.obj.getTrackColor())
-          .selectedColor(this.obj.getSelectedColor())
-          .trackThickness(this.obj.getTrackThickness())
-          .showSteps(this.obj.getShowSteps())
-          .showTips(this.obj.getShowTips())
-          .onChange((value: number = null, mode: SliderChangeMode) => {
-            this.obj.setInSetValue(value)
-          })
-        Row() {
-          Column() {
-            if (this.obj.getShowMin()) {
-              Text(this.obj.getMin().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
-
-          Column() {
-            if (this.obj.getShowValue()) {
-              Text(this.obj.getInSetValue().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
-
-          Column() {
-            if (this.obj.getShowMax()) {
-              Text(this.obj.getMax().toFixed(0)).fontSize(16)
-            }
-          }.width('33%')
-        }
-      }
-    }
-  }
-}
-
-export { SliderModel } from "./sliderModel"
+export { SliderModel, SliderType } from "./sliderModel"

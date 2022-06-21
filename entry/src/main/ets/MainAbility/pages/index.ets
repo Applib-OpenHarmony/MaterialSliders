@@ -12,42 +12,49 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { SliderContinue, SliderDiscrete, SliderModel }  from '@ohos/material-slider'
+import { MaterialSlider, SliderModel, SliderType }  from '@ohos/material-slider'
 
 @Entry
 @Component
 struct Index {
-  scroller: Scroller = new Scroller()
+  scroller1: Scroller = new Scroller()
+  scroller2: Scroller = new Scroller()
   @State message: string = 'Basic Sliders'
-  private sliderModel1: SliderModel = new SliderModel(1, "sliderContinue-outset")
-  private sliderModel2: SliderModel = new SliderModel(1, "sliderContinue-inset")
-  private sliderModel3: SliderModel = new SliderModel(2, "sliderDiscrete-outset")
-  private sliderModel4: SliderModel = new SliderModel(2, "sliderDiscrete-inset")
+  @State isShow1: boolean = false
+  @State isShow2: boolean = false
+  @State isShow3: boolean = false
+  @State isShow4: boolean = false
+  private sliderModel1: SliderModel = new SliderModel(SliderType.Continue)
+  private sliderModel2: SliderModel = new SliderModel(SliderType.Continue)
+  private sliderModel3: SliderModel = new SliderModel(SliderType.Discrete)
+  private sliderModel4: SliderModel = new SliderModel(SliderType.Discrete)
+
+  private onCheckChange(value: number, mode: SliderChangeMode) {
+    console.log("Value: " + value + ", Mode: " + mode)
+  }
 
   aboutToAppear() {
-    this.sliderModel1.setSliderType("outset")
-    this.sliderModel1.setMin(100)
-    this.sliderModel1.setMax(1000)
-    this.sliderModel1.setStep(1)
-    this.sliderModel1.setOutSetValue(500)
+    this.sliderModel1.setSliderStyle(SliderStyle.OutSet)
+    this.sliderModel1.setMin(-10)
+    this.sliderModel1.setMax(10)
+    this.sliderModel1.setStep(3)
+    this.sliderModel1.setCurrentValue(500)
     this.sliderModel1.setShowSteps(false)
     this.sliderModel1.setShowTips(true)
     this.sliderModel1.setTrackThickness(8)
     this.sliderModel1.setReverse(false)
     this.sliderModel1.setShowValue(true)
-    this.sliderModel1.setShowMin(false)
-    this.sliderModel1.setShowMax(false)
+    this.sliderModel1.setShowMin(true)
+    this.sliderModel1.setShowMax(true)
     this.sliderModel1.setDirection(Axis.Horizontal)
     this.sliderModel1.setBlockColor("#ff0477ff")
     this.sliderModel1.setTrackColor("#D0D0D0")
     this.sliderModel1.setSelectedColor("#ff0477ff")
 
-    this.sliderModel2.setSliderType("inset")
+    this.sliderModel2.setSliderStyle(SliderStyle.InSet)
     this.sliderModel2.setMin(0)
     this.sliderModel2.setMax(100)
-    this.sliderModel2.setStep(1)
-    this.sliderModel2.setInSetValue(40)
-    this.sliderModel2.setShowSteps(false)
+    this.sliderModel2.setCurrentValue(40)
     this.sliderModel2.setShowTips(true)
     this.sliderModel2.setTrackThickness(15)
     this.sliderModel2.setReverse(false)
@@ -59,35 +66,26 @@ struct Index {
     this.sliderModel2.setTrackColor("#D0D0D0")
     this.sliderModel2.setSelectedColor("#ff0477ff")
 
-    this.sliderModel3.setSliderType("outset")
+    this.sliderModel3.setSliderStyle(SliderStyle.OutSet)
     this.sliderModel3.setMin(1000)
     this.sliderModel3.setMax(10000)
     this.sliderModel3.setStep(1000)
-    this.sliderModel3.setOutSetValue(3000)
-    this.sliderModel3.setShowSteps(true)
-    this.sliderModel3.setShowTips(true)
-    this.sliderModel3.setTrackThickness(8)
-    this.sliderModel3.setReverse(false)
     this.sliderModel3.setShowValue(true)
-    this.sliderModel3.setShowMin(false)
-    this.sliderModel3.setShowMax(false)
-    this.sliderModel3.setDirection(Axis.Horizontal)
-    this.sliderModel3.setBlockColor("#ff0477ff")
-    this.sliderModel3.setTrackColor("#D0D0D0")
-    this.sliderModel3.setSelectedColor("#ff0477ff")
+    this.sliderModel3.setShowMin(true)
+    this.sliderModel3.setShowMax(true)
 
-    this.sliderModel4.setSliderType("inset")
+    this.sliderModel4.setSliderStyle(SliderStyle.InSet)
     this.sliderModel4.setMin(0)
-    this.sliderModel4.setMax(100)
-    this.sliderModel4.setStep(10)
-    this.sliderModel4.setInSetValue(50)
+    this.sliderModel4.setMax(10)
+    this.sliderModel4.setStep(2)
+    this.sliderModel4.setCurrentValue(50)
     this.sliderModel4.setShowSteps(true)
     this.sliderModel4.setShowTips(true)
     this.sliderModel4.setTrackThickness(15)
     this.sliderModel4.setReverse(false)
     this.sliderModel4.setShowValue(true)
-    this.sliderModel4.setShowMin(false)
-    this.sliderModel4.setShowMax(false)
+    this.sliderModel4.setShowMin(true)
+    this.sliderModel4.setShowMax(true)
     this.sliderModel4.setDirection(Axis.Horizontal)
     this.sliderModel4.setBlockColor(Color.White)
     this.sliderModel4.setTrackColor("#D0D0D0")
@@ -95,7 +93,7 @@ struct Index {
   }
 
   build() {
-    Scroll(this.scroller) {
+    Scroll(this.scroller1) {
       Column() {
         Text(this.message)
           .fontSize(25)
@@ -110,24 +108,90 @@ struct Index {
             .lineCap(LineCapStyle.Round)
         }.height('5%')
 
-        Text('Outset Continuous Slider').fontSize(20).fontColor("black").width('90%')
-        SliderContinue({
-          obj: this.sliderModel1
-        })
-        Text('Inset continuous Slider').fontSize(20).fontColor("black").width('90%')
-        SliderContinue({
-          obj: this.sliderModel2
-        })
+        Row() {
+          Column() {
+            Button('Continuous-outset')
+              .margin(5)
+              .type(ButtonType.Normal)
+              .borderRadius(2)
+              .fontColor(Color.Black)
+              .backgroundColor("#D0D0D0")
+              .onClick(() => {
+                this.isShow1 = !this.isShow1
+                this.isShow2 = false
+                this.isShow3 = false
+                this.isShow4 = false
+              })
+            Button('Continuous-inset')
+              .margin(5)
+              .type(ButtonType.Normal)
+              .borderRadius(2)
+              .fontColor(Color.Black)
+              .backgroundColor("#D0D0D0")
+              .onClick(() => {
+                this.isShow2 = !this.isShow2
+                this.isShow1 = false
+                this.isShow3 = false
+                this.isShow4 = false
+              })
+          }
 
-        Text('Outset Discrete Slider').fontSize(20).fontColor("black").width('90%')
-        SliderDiscrete({
-          obj: this.sliderModel3
-        })
-        Text('Inset Discrete Slider').fontSize(20).fontColor("black").width('90%')
-        SliderDiscrete({
-          obj: this.sliderModel4
-        })
+          Column() {
+            Button('Discrete-outset')
+              .margin(5)
+              .type(ButtonType.Normal)
+              .borderRadius(2)
+              .fontColor(Color.Black)
+              .backgroundColor("#D0D0D0")
+              .onClick(() => {
+                this.isShow3 = !this.isShow3
+                this.isShow2 = false
+                this.isShow1 = false
+                this.isShow4 = false
+              })
+            Button('Discrete-inset')
+              .margin(5)
+              .type(ButtonType.Normal)
+              .borderRadius(2)
+              .fontColor(Color.Black)
+              .backgroundColor("#D0D0D0")
+              .onClick(() => {
+                this.isShow4 = !this.isShow4
+                this.isShow2 = false
+                this.isShow3 = false
+                this.isShow1 = false
+              })
+          }
+        }.margin({ bottom: 10 })
 
+        if (this.isShow1) {
+          Text('Outset Continuous Slider').fontSize(20).fontColor("black").width('90%')
+          MaterialSlider({
+            obj: this.sliderModel1,
+            onCheckChange: this.onCheckChange
+          })
+        }
+        if (this.isShow2) {
+          Text('Inset continuous Slider').fontSize(20).fontColor("black").width('90%')
+          MaterialSlider({
+            obj: this.sliderModel2,
+            onCheckChange: this.onCheckChange
+          })
+        }
+        if (this.isShow3) {
+          Text('Outset Discrete Slider').fontSize(20).fontColor("black").width('90%')
+          MaterialSlider({
+            obj: this.sliderModel3,
+            onCheckChange: this.onCheckChange
+          })
+        }
+        if (this.isShow4) {
+          Text('Inset Discrete Slider').fontSize(20).fontColor("black").width('90%')
+          MaterialSlider({
+            obj: this.sliderModel4,
+            onCheckChange: this.onCheckChange
+          })
+        }
       }.width('100%').padding({ left: 5, right: 5 })
     }.scrollable(ScrollDirection.Vertical).scrollBar(BarState.On)
   }
