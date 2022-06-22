@@ -1,4 +1,4 @@
-# Material_UI_Sliders
+# MaterialSliders
 
 It is a slider library in ETS. It contains two types of sliders - continuous and discrete and supports all attributes of
 ETS slider which are already present in OpenHarmony API version 8, along with some extra attributes.
@@ -6,7 +6,7 @@ ETS slider which are already present in OpenHarmony API version 8, along with so
 ## Installation
 
 ```ets 
-npm install https://github.com/Applib-OpenHarmony/Material_UI_Sliders
+npm install https://github.com/Applib-OpenHarmony/MaterialSliders
 ```
 
 ## Usage Instruction
