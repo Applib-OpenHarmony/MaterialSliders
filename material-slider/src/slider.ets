@@ -16,50 +16,62 @@ import { SliderModel, SliderType } from '@ohos/material-slider'
 
 @Component
 export struct MaterialSlider {
-  @State obj: SliderModel = new SliderModel(SliderType.Continue)
-  private onCheckChange: ((value: number, mode: SliderChangeMode) => void) = null
+  @State obj: SliderModel = undefined
+
+  aboutToAppear() {
+    if (this.obj == null || this.obj == undefined) {
+      console.error('Mandatory attributes required')
+    }
+    else if (this.obj.getSliderType() == null || this.obj.getSliderType() == undefined) {
+      this.obj.error('sliderType')
+    }
+  }
+
+  private onSliderChange: ((value: number, mode: SliderChangeMode) => void) = null
 
   build() {
-    Column({ space: 5 }) {
-      Slider({
-        value: this.obj.getCurrentValue(),
-        min: this.obj.getMin(),
-        max: this.obj.getMax(),
-        step: this.obj.getStep(),
-        direction: this.obj.getDirection(),
-        reverse: this.obj.getReverse(),
-        style: this.obj.getSliderStyle()
-      })
-        .blockColor(this.obj.getBlockColor())
-        .trackColor(this.obj.getTrackColor())
-        .selectedColor(this.obj.getSelectedColor())
-        .trackThickness(this.obj.getTrackThickness())
-        .showSteps(this.obj.getShowSteps())
-        .showTips(this.obj.getShowTips())
-        .onChange((value: number, mode: SliderChangeMode) => {
-          this.obj.setCurrentValue(value)
-          if (this.onCheckChange != null && this.onCheckChange != undefined) {
-            this.onCheckChange(this.obj.getCurrentValue(), mode)
-          }
+    if (this.obj != null && this.obj != undefined) {
+      Column({ space: 5 }) {
+        Slider({
+          value: this.obj.getCurrentValue(),
+          min: this.obj.getMin(),
+          max: this.obj.getMax(),
+          step: this.obj.getStep(),
+          direction: this.obj.getDirection(),
+          reverse: this.obj.getReverse(),
+          style: this.obj.getSliderStyle()
         })
-      Row() {
-        Column() {
-          if (this.obj.getShowMin()) {
-            Text(this.obj.getMin().toFixed(0)).fontSize(16)
-          }
-        }.width('33%')
+          .blockColor(this.obj.getBlockColor())
+          .trackColor(this.obj.getTrackColor())
+          .selectedColor(this.obj.getSelectedColor())
+          .trackThickness(this.obj.getTrackThickness())
+          .showSteps(this.obj.getShowSteps())
+          .showTips(this.obj.getShowTips())
+          .onChange((value: number, mode: SliderChangeMode) => {
+            this.obj.setCurrentValue(value)
+            if (this.onSliderChange != null && this.onSliderChange != undefined) {
+              this.onSliderChange(this.obj.getCurrentValue(), mode)
+            }
+          })
+        Row() {
+          Column() {
+            if (this.obj.getShowMin()) {
+              Text(this.obj.getMin().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
 
-        Column() {
-          if (this.obj.getShowValue()) {
-            Text(this.obj.getCurrentValue().toFixed(0)).fontSize(16)
-          }
-        }.width('33%')
+          Column() {
+            if (this.obj.getShowValue()) {
+              Text(this.obj.getCurrentValue().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
 
-        Column() {
-          if (this.obj.getShowMax()) {
-            Text(this.obj.getMax().toFixed(0)).fontSize(16)
-          }
-        }.width('33%')
+          Column() {
+            if (this.obj.getShowMax()) {
+              Text(this.obj.getMax().toFixed(0)).fontSize(16)
+            }
+          }.width('33%')
+        }
       }
     }
   }

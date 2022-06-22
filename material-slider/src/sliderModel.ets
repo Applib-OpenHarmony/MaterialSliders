@@ -44,6 +44,10 @@ export class SliderModel {
     console.error('Undefined : ' + msg + ' is a mandatory attribute')
   }
 
+  getSliderType(): SliderType{
+    return this.sliderType
+  }
+
   setSliderStyle(value: SliderStyle) {
     if (value != null) this.sliderStyle = value
   }
@@ -101,8 +105,8 @@ export class SliderModel {
   }
 
   setTrackThickness(value: number) {
-    if (this.sliderStyle == SliderStyle.OutSet) this.trackThickness = (value == null || value <= 0 || value == undefined) ? 8 : value
-    else this.trackThickness = (value == null || value <= 0 || value == undefined) ? 15 : value
+    if (this.sliderStyle == SliderStyle.InSet) this.trackThickness = (value == null || value <= 0 || value == undefined) ? 15 : value
+    else this.trackThickness = (value == null || value <= 0 || value == undefined) ? 8 : value
   }
 
   getTrackThickness(): number{

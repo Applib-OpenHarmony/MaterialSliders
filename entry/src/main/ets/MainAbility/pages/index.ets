@@ -29,7 +29,7 @@ struct Index {
   private sliderModel3: SliderModel = new SliderModel(SliderType.Discrete)
   private sliderModel4: SliderModel = new SliderModel(SliderType.Discrete)
 
-  private onCheckChange(value: number, mode: SliderChangeMode) {
+  private onSliderChange(value: number, mode: SliderChangeMode) {
     console.log("Value: " + value + ", Mode: " + mode)
   }
 
@@ -168,28 +168,28 @@ struct Index {
           Text('Outset Continuous Slider').fontSize(20).fontColor("black").width('90%')
           MaterialSlider({
             obj: this.sliderModel1,
-            onCheckChange: this.onCheckChange
+            onSliderChange: this.onSliderChange
           })
         }
         if (this.isShow2) {
           Text('Inset continuous Slider').fontSize(20).fontColor("black").width('90%')
           MaterialSlider({
             obj: this.sliderModel2,
-            onCheckChange: this.onCheckChange
+            onSliderChange: this.onSliderChange
           })
         }
         if (this.isShow3) {
           Text('Outset Discrete Slider').fontSize(20).fontColor("black").width('90%')
           MaterialSlider({
             obj: this.sliderModel3,
-            onCheckChange: this.onCheckChange
+            onSliderChange: this.onSliderChange
           })
         }
         if (this.isShow4) {
           Text('Inset Discrete Slider').fontSize(20).fontColor("black").width('90%')
           MaterialSlider({
             obj: this.sliderModel4,
-            onCheckChange: this.onCheckChange
+            onSliderChange: this.onSliderChange
           })
         }
       }.width('100%').padding({ left: 5, right: 5 })
