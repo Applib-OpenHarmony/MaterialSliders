@@ -17,8 +17,7 @@ import { MaterialSlider, SliderModel, SliderType }  from '@ohos/material-slider'
 @Entry
 @Component
 struct Index {
-  scroller1: Scroller = new Scroller()
-  scroller2: Scroller = new Scroller()
+  scroller: Scroller = new Scroller()
   @State message: string = 'Basic Sliders'
   @State isShow1: boolean = false
   @State isShow2: boolean = false
@@ -30,7 +29,7 @@ struct Index {
   private sliderModel4: SliderModel = new SliderModel(SliderType.Discrete)
 
   private onSliderChange(value: number, mode: SliderChangeMode) {
-    console.log("Value: " + value + ", Mode: " + mode)
+    console.log("Value: " + value.toFixed(0) + ", Mode: " + mode)
   }
 
   aboutToAppear() {
@@ -70,6 +69,7 @@ struct Index {
     this.sliderModel3.setMin(1000)
     this.sliderModel3.setMax(10000)
     this.sliderModel3.setStep(1000)
+    this.sliderModel3.setCurrentValue(3000)
     this.sliderModel3.setShowValue(true)
     this.sliderModel3.setShowMin(true)
     this.sliderModel3.setShowMax(true)
@@ -93,16 +93,16 @@ struct Index {
   }
 
   build() {
-    Scroll(this.scroller1) {
+    Scroll(this.scroller) {
       Column() {
         Text(this.message)
-          .fontSize(25)
+          .fontSize('25fp')
           .fontWeight(FontWeight.Bold)
-          .padding(20)
+          .padding('20vp')
         Row() {
           Divider()
             .color("#D0D0D0")
-            .strokeWidth(5)
+            .strokeWidth('5vp')
             .opacity(60)
             .shadow({ radius: 15, color: "#D0D0D0", offsetY: 8 })
             .lineCap(LineCapStyle.Round)
@@ -111,9 +111,9 @@ struct Index {
         Row() {
           Column() {
             Button('Continuous-outset')
-              .margin(5)
+              .margin('5vp')
               .type(ButtonType.Normal)
-              .borderRadius(2)
+              .borderRadius('2vp')
               .fontColor(Color.Black)
               .backgroundColor("#D0D0D0")
               .onClick(() => {
@@ -123,9 +123,9 @@ struct Index {
                 this.isShow4 = false
               })
             Button('Continuous-inset')
-              .margin(5)
+              .margin('5vp')
               .type(ButtonType.Normal)
-              .borderRadius(2)
+              .borderRadius('2vp')
               .fontColor(Color.Black)
               .backgroundColor("#D0D0D0")
               .onClick(() => {
@@ -138,9 +138,9 @@ struct Index {
 
           Column() {
             Button('Discrete-outset')
-              .margin(5)
+              .margin('5vp')
               .type(ButtonType.Normal)
-              .borderRadius(2)
+              .borderRadius('2vp')
               .fontColor(Color.Black)
               .backgroundColor("#D0D0D0")
               .onClick(() => {
@@ -150,9 +150,9 @@ struct Index {
                 this.isShow4 = false
               })
             Button('Discrete-inset')
-              .margin(5)
+              .margin('5vp')
               .type(ButtonType.Normal)
-              .borderRadius(2)
+              .borderRadius('2vp')
               .fontColor(Color.Black)
               .backgroundColor("#D0D0D0")
               .onClick(() => {
@@ -162,37 +162,37 @@ struct Index {
                 this.isShow1 = false
               })
           }
-        }.margin({ bottom: 10 })
+        }.margin({ bottom: '10vp' })
 
         if (this.isShow1) {
-          Text('Outset Continuous Slider').fontSize(20).fontColor("black").width('90%')
+          Text('Outset Continuous Slider').fontSize('20fp').fontColor("black").width('90%')
           MaterialSlider({
             obj: this.sliderModel1,
             onSliderChange: this.onSliderChange
           })
         }
         if (this.isShow2) {
-          Text('Inset continuous Slider').fontSize(20).fontColor("black").width('90%')
+          Text('Inset continuous Slider').fontSize('20fp').fontColor("black").width('90%')
           MaterialSlider({
             obj: this.sliderModel2,
             onSliderChange: this.onSliderChange
           })
         }
         if (this.isShow3) {
-          Text('Outset Discrete Slider').fontSize(20).fontColor("black").width('90%')
+          Text('Outset Discrete Slider').fontSize('20fp').fontColor("black").width('90%')
           MaterialSlider({
             obj: this.sliderModel3,
             onSliderChange: this.onSliderChange
           })
         }
         if (this.isShow4) {
-          Text('Inset Discrete Slider').fontSize(20).fontColor("black").width('90%')
+          Text('Inset Discrete Slider').fontSize('20fp').fontColor("black").width('90%')
           MaterialSlider({
             obj: this.sliderModel4,
             onSliderChange: this.onSliderChange
           })
         }
-      }.width('100%').padding({ left: 5, right: 5 })
+      }.width('100%').padding({ left: '5vp', right: '5vp' })
     }.scrollable(ScrollDirection.Vertical).scrollBar(BarState.On)
   }
 }

@@ -31,7 +31,7 @@ export struct MaterialSlider {
 
   build() {
     if (this.obj != null && this.obj != undefined) {
-      Column({ space: 5 }) {
+      Column({ space: '5vp' }) {
         Slider({
           value: this.obj.getCurrentValue(),
           min: this.obj.getMin(),
@@ -56,19 +56,19 @@ export struct MaterialSlider {
         Row() {
           Column() {
             if (this.obj.getShowMin()) {
-              Text(this.obj.getMin().toFixed(0)).fontSize(16)
+              Text(this.obj.getMin().toFixed(0)).fontSize('16fp')
             }
           }.width('33%')
 
           Column() {
             if (this.obj.getShowValue()) {
-              Text(this.obj.getCurrentValue().toFixed(0)).fontSize(16)
+              Text(this.obj.getCurrentValue().toFixed(0)).fontSize('16fp')
             }
           }.width('33%')
 
           Column() {
             if (this.obj.getShowMax()) {
-              Text(this.obj.getMax().toFixed(0)).fontSize(16)
+              Text(this.obj.getMax().toFixed(0)).fontSize('16fp')
             }
           }.width('33%')
         }
