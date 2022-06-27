@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { MaterialSlider, SliderModel, SliderType }  from '@ohos/material-slider'
+import { MaterialSlider, SliderModel, SliderType }  from '@ohos/materialslider'
 
 @Entry
 @Component
@@ -40,7 +40,7 @@ struct Index {
     this.sliderModel1.setCurrentValue(500)
     this.sliderModel1.setShowSteps(false)
     this.sliderModel1.setShowTips(true)
-    this.sliderModel1.setTrackThickness(8)
+    this.sliderModel1.setTrackThickness('8vp')
     this.sliderModel1.setReverse(false)
     this.sliderModel1.setShowValue(true)
     this.sliderModel1.setShowMin(true)
@@ -81,7 +81,7 @@ struct Index {
     this.sliderModel4.setCurrentValue(50)
     this.sliderModel4.setShowSteps(true)
     this.sliderModel4.setShowTips(true)
-    this.sliderModel4.setTrackThickness(15)
+    this.sliderModel4.setTrackThickness('15vp')
     this.sliderModel4.setReverse(false)
     this.sliderModel4.setDirection(Axis.Horizontal)
     this.sliderModel4.setShowValue(true)

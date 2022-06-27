@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { SliderModel, SliderType } from '@ohos/material-slider'
+import { SliderModel, SliderType } from './sliderModel'
 
 @Component
 export struct MaterialSlider {
@@ -22,8 +22,53 @@ export struct MaterialSlider {
     if (this.obj == null || this.obj == undefined) {
       console.error('Mandatory attributes required')
     }
-    else if (this.obj.getSliderType() == null || this.obj.getSliderType() == undefined) {
+    if (this.obj.getSliderType() == null || this.obj.getSliderType() == undefined) {
       this.obj.error('sliderType')
+    }
+    if (this.obj.getSliderStyle() == null || this.obj.getSliderStyle() == undefined) {
+      this.obj.error('sliderStyle')
+    }
+    if (this.obj.getMin() == null || this.obj.getMin() == undefined) {
+      this.obj.error('min')
+    }
+    if (this.obj.getMax() == null || this.obj.getMax() == undefined) {
+      this.obj.error('max')
+    }
+    if (this.obj.getStep() == null || this.obj.getStep() == undefined) {
+      this.obj.setStep(null)
+    }
+    if (this.obj.getShowSteps() == null || this.obj.getShowSteps() == undefined) {
+      this.obj.setShowSteps(null)
+    }
+    if (this.obj.getShowTips() == null || this.obj.getShowTips() == undefined) {
+      this.obj.setShowTips(null)
+    }
+    if (this.obj.getTrackThickness() == null || this.obj.getTrackThickness() == undefined) {
+      this.obj.setTrackThickness(null)
+    }
+    if (this.obj.getCurrentValue() == null || this.obj.getCurrentValue() == undefined) {
+      this.obj.setCurrentValue(null)
+    }
+    if (this.obj.getReverse() == null || this.obj.getReverse() == undefined) {
+      this.obj.setReverse(null)
+    }
+    if (this.obj.getReverse() == null || this.obj.getReverse() == undefined) {
+      this.obj.setReverse(null)
+    }
+    if (this.obj.getDirection() == null || this.obj.getDirection() == undefined) {
+      this.obj.setDirection(null)
+    }
+    if (this.obj.getBlockColor() == null || this.obj.getBlockColor() == undefined) {
+      this.obj.setBlockColor(null)
+    }
+    if (this.obj.getShowMin() == null || this.obj.getShowMin() == undefined) {
+      this.obj.setShowMin(null)
+    }
+    if (this.obj.getShowMax() == null || this.obj.getShowMax() == undefined) {
+      this.obj.setShowMax(null)
+    }
+    if (this.obj.getShowValue() == null || this.obj.getShowValue() == undefined) {
+      this.obj.setShowValue(null)
     }
   }
 
@@ -77,4 +122,4 @@ export struct MaterialSlider {
   }
 }
 
-export { SliderModel, SliderType } from "./sliderModel"
+export { SliderModel, SliderType } from './sliderModel'

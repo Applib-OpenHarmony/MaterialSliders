@@ -25,7 +25,7 @@ export class SliderModel {
   private step: number = undefined
   private showSteps: boolean = undefined
   private showTips: boolean = undefined
-  private trackThickness: number = undefined
+  private trackThickness: Length = undefined
   private currentValue: number = undefined
   private reverse: boolean = undefined
   private direction: Axis = undefined
@@ -41,7 +41,7 @@ export class SliderModel {
   }
 
   error(msg: string) {
-    console.error('Undefined : ' + msg + ' is a mandatory attribute')
+    console.error(msg + ' is a mandatory attribute')
   }
 
   getSliderType(): SliderType{
@@ -50,28 +50,28 @@ export class SliderModel {
 
   setSliderStyle(value: SliderStyle) {
     if (value != null) this.sliderStyle = value
+    if (this.sliderStyle == null || this.sliderStyle == undefined) this.error('sliderStyle')
   }
 
   getSliderStyle(): SliderStyle {
-    if (this.sliderStyle == null || this.sliderStyle == undefined) this.error('sliderStyle')
     return this.sliderStyle
   }
 
   setMin(value: number) {
     this.min = (value != null) ? value : 0
+    if (this.min == null || this.min == undefined) this.error('min')
   }
 
   getMin(): number{
-    if (this.min == null || this.min == undefined) this.error('min')
     return this.min
   }
 
   setMax(value: number) {
     this.max = value
+    if (this.max == null || this.max == undefined) this.error('max')
   }
 
   getMax(): number{
-    if (this.max == null || this.max == undefined) this.error('max')
     return this.max
   }
 
@@ -81,7 +81,6 @@ export class SliderModel {
   }
 
   getStep(): number{
-    if (this.step == null || this.step == undefined) this.setStep(null)
     return this.step
   }
 
@@ -91,7 +90,6 @@ export class SliderModel {
   }
 
   getShowSteps(): boolean{
-    if (this.showSteps == undefined) this.setShowSteps(null)
     return this.showSteps
   }
 
@@ -100,17 +98,15 @@ export class SliderModel {
   }
 
   getShowTips(): boolean{
-    if (this.showTips == undefined) this.setShowTips(null)
     return this.showTips
   }
 
-  setTrackThickness(value: number) {
-    if (this.sliderStyle == SliderStyle.InSet) this.trackThickness = (value == null || value <= 0 || value == undefined) ? 15 : value
-    else this.trackThickness = (value == null || value <= 0 || value == undefined) ? 8 : value
+  setTrackThickness(value: Length) {
+    if (this.sliderStyle == SliderStyle.InSet) this.trackThickness = (value == null || value <= 0 || value == undefined) ? '15vp' : value
+    else this.trackThickness = (value == null || value <= 0 || value == undefined) ? '8vp' : value
   }
 
-  getTrackThickness(): number{
-    if (this.trackThickness == undefined) this.setTrackThickness(null)
+  getTrackThickness(): Length{
     return this.trackThickness
   }
 
@@ -122,7 +118,6 @@ export class SliderModel {
   }
 
   getCurrentValue(): number{
-    if (this.currentValue == undefined) this.setCurrentValue(null)
     return this.currentValue
   }
 
@@ -131,7 +126,6 @@ export class SliderModel {
   }
 
   getReverse(): boolean{
-    if (this.reverse == undefined) this.setReverse(null)
     return this.reverse
   }
 
@@ -140,18 +134,16 @@ export class SliderModel {
   }
 
   getDirection(): Axis{
-    if (this.direction == undefined) this.setDirection(null)
     return this.direction
   }
 
   setBlockColor(value: string | ResourceColor) {
-    if (this.sliderStyle == SliderStyle.OutSet) this.blockColor = (value == null || value == undefined) ? "#ff0477ff" : value
-    else this.blockColor = (value == null || value == undefined) ? Color.White : value
-
+    if (this.sliderStyle == SliderStyle.InSet) this.blockColor = (value == null || value == undefined) ? Color.White : value
+    else this.blockColor = (value == null || value == undefined) ? "#ff0477ff" : value
   }
 
   getBlockColor(): string | ResourceColor{
-    if (this.blockColor == undefined) this.setBlockColor(null)
+    if (this.blockColor == null || this.blockColor == undefined) this.setBlockColor(null)
     return this.blockColor
   }
 
@@ -176,7 +168,6 @@ export class SliderModel {
   }
 
   getShowMin(): boolean{
-    if (this.showMin == undefined) this.setShowMin(null)
     return this.showMin
   }
 
@@ -185,7 +176,6 @@ export class SliderModel {
   }
 
   getShowMax(): boolean{
-    if (this.showMax == undefined) this.setShowMax(null)
     return this.showMax
   }
 
@@ -194,7 +184,6 @@ export class SliderModel {
   }
 
   getShowValue(): boolean{
-    if (this.showValue == undefined) this.setShowValue(null)
     return this.showValue
   }
 }
