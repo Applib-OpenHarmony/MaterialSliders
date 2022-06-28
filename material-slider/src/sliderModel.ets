@@ -23,20 +23,20 @@ export class SliderModel {
   private min: number = undefined
   private max: number = undefined
   private step: number = undefined
-  private showSteps: boolean = undefined
-  private showTips: boolean = undefined
-  private trackThickness: Length = undefined
+  private showSteps: boolean = false
+  private showTips: boolean = false
+  private trackThickness: Length = '8vp'
   private currentValue: number = undefined
-  private reverse: boolean = undefined
-  private direction: Axis = undefined
+  private reverse: boolean = false
+  private direction: Axis = Axis.Horizontal
   private showMin: boolean = false
   private showMax: boolean = false
   private showValue: boolean = false
-  private blockColor: string | ResourceColor = undefined
+  private blockColor: string | ResourceColor = "#ff0477ff"
   private trackColor: string | ResourceColor = "#D0D0D0"
   private selectedColor: string | ResourceColor = "#ff0477ff"
   constructor(value: SliderType) {
-    if (value != null || value != undefined) this.sliderType = value
+    if (value != null && value != undefined) this.sliderType = value
     else this.error('sliderType')
   }
 
@@ -49,8 +49,8 @@ export class SliderModel {
   }
 
   setSliderStyle(value: SliderStyle) {
-    if (value != null) this.sliderStyle = value
-    if (this.sliderStyle == null || this.sliderStyle == undefined) this.error('sliderStyle')
+    if (value != null && value != undefined) this.sliderStyle = value
+    else this.error('sliderStyle')
   }
 
   getSliderStyle(): SliderStyle {
@@ -58,8 +58,8 @@ export class SliderModel {
   }
 
   setMin(value: number) {
-    this.min = (value != null) ? value : 0
-    if (this.min == null || this.min == undefined) this.error('min')
+    if (value != null && value != undefined) this.min = value
+    else this.error('min')
   }
 
   getMin(): number{
@@ -67,8 +67,8 @@ export class SliderModel {
   }
 
   setMax(value: number) {
-    this.max = value
-    if (this.max == null || this.max == undefined) this.error('max')
+    if (value != null && value != undefined) this.max = value
+    else this.error('max')
   }
 
   getMax(): number{
@@ -112,8 +112,8 @@ export class SliderModel {
 
   setCurrentValue(value: number) {
     var auto = this.max
-    if (value != null && value < this.min) auto = this.min
-    else if (value != null && value > this.max) auto = this.max
+    if (value != null && value != undefined && value < this.min) auto = this.min
+    else if (value != null && value != undefined && value > this.max) auto = this.max
     this.currentValue = (value == null || value == undefined || value > this.max || value < this.min) ? auto : value
   }
 
