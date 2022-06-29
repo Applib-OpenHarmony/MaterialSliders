@@ -12,82 +12,187 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { SliderContinue, SliderDiscrete }  from '@ohos/libSlider'
+import { MaterialSlider, SliderModel, SliderType }  from '@ohos/materialslider'
+
 @Entry
 @Component
 struct Index {
+  scroller: Scroller = new Scroller()
   @State message: string = 'Basic Sliders'
-  @State sliderType : string = ""
+  @State isShow1: boolean = false
+  @State isShow2: boolean = false
+  @State isShow3: boolean = false
+  @State isShow4: boolean = false
+  private sliderModel1: SliderModel = new SliderModel(SliderType.Continue)
+  private sliderModel2: SliderModel = new SliderModel(SliderType.Continue)
+  private sliderModel3: SliderModel = new SliderModel(SliderType.Discrete)
+  private sliderModel4: SliderModel = new SliderModel(SliderType.Discrete)
+
+  private onSliderChange(value: number, mode: SliderChangeMode) {
+    console.log("Value: " + value.toFixed(0) + ", Mode: " + mode)
+  }
+
+  aboutToAppear() {
+    this.sliderModel1.setSliderStyle(SliderStyle.OutSet)
+    this.sliderModel1.setMin(-10)
+    this.sliderModel1.setMax(10)
+    this.sliderModel1.setStep(3)
+    this.sliderModel1.setCurrentValue(500)
+    this.sliderModel1.setShowSteps(false)
+    this.sliderModel1.setShowTips(true)
+    this.sliderModel1.setTrackThickness('8vp')
+    this.sliderModel1.setReverse(false)
+    this.sliderModel1.setShowValue(true)
+    this.sliderModel1.setShowMin(true)
+    this.sliderModel1.setShowMax(true)
+    this.sliderModel1.setDirection(Axis.Horizontal)
+    this.sliderModel1.setBlockColor("#ff0477ff")
+    this.sliderModel1.setTrackColor("#D0D0D0")
+    this.sliderModel1.setSelectedColor("#ff0477ff")
+
+    this.sliderModel2.setSliderStyle(SliderStyle.InSet)
+    this.sliderModel2.setMin(0)
+    this.sliderModel2.setMax(100)
+    this.sliderModel2.setCurrentValue(40)
+    this.sliderModel2.setShowTips(true)
+    this.sliderModel2.setTrackThickness(15)
+    this.sliderModel2.setReverse(false)
+    this.sliderModel2.setShowValue(true)
+    this.sliderModel2.setShowMin(false)
+    this.sliderModel2.setShowMax(false)
+    this.sliderModel2.setDirection(Axis.Horizontal)
+    this.sliderModel2.setBlockColor(Color.White)
+    this.sliderModel2.setTrackColor("#D0D0D0")
+    this.sliderModel2.setSelectedColor("#ff0477ff")
+
+    this.sliderModel3.setSliderStyle(SliderStyle.OutSet)
+    this.sliderModel3.setMin(1000)
+    this.sliderModel3.setMax(10000)
+    this.sliderModel3.setStep(1000)
+    this.sliderModel3.setCurrentValue(3000)
+    this.sliderModel3.setShowValue(true)
+    this.sliderModel3.setShowMin(true)
+    this.sliderModel3.setShowMax(true)
+
+    this.sliderModel4.setSliderStyle(SliderStyle.InSet)
+    this.sliderModel4.setMin(0)
+    this.sliderModel4.setMax(100)
+    this.sliderModel4.setStep(10)
+    this.sliderModel4.setCurrentValue(50)
+    this.sliderModel4.setShowSteps(true)
+    this.sliderModel4.setShowTips(true)
+    this.sliderModel4.setTrackThickness('15vp')
+    this.sliderModel4.setReverse(false)
+    this.sliderModel4.setDirection(Axis.Horizontal)
+    this.sliderModel4.setShowValue(true)
+    this.sliderModel4.setShowMin(true)
+    this.sliderModel4.setShowMax(true)
+    this.sliderModel4.setBlockColor(Color.White)
+    this.sliderModel4.setTrackColor("#D0D0D0")
+    this.sliderModel4.setSelectedColor("#ff0477ff")
+  }
+
   build() {
-    Column() {
-      Text(this.message)
-        .fontSize(25)
-        .fontWeight(FontWeight.Bold)
-        .padding(20)
-      Row(){
-        Divider()
-          .color("#D0D0D0")
-          .strokeWidth(5)
-          .opacity(60)
-          .shadow({ radius : 15, color : "#D0D0D0",offsetY: 8})
-          .lineCap(LineCapStyle.Round)
-      }.height('5%')
-      Text('Outset Continuous Slider').fontSize(20).fontColor("black").width('90%')
-      SliderContinue({
-        sliderType : "outset",
-        min : 100,
-        max: 1000,
-        step : 1,
-        showSteps : false,
-        showTips : true,
-        outSetValue : 500,
-        trackThickness : 8,
-        blockColor : "#ff0477ff",
-        trackColor : "#D0D0D0",
-        selectedColor : "#ff0477ff"
-      })
-      Text('Inset continuous Slider').fontSize(20).fontColor("black").width('90%')
-      SliderContinue({
-        sliderType : "inset",
-        min : 0,
-        max: 100,
-        step : 1,
-        showSteps : false,
-        showTips : true,
-        inSetValue : 40,
-        trackThickness : 15,
-        blockColor : Color.White,
-        trackColor :  "#D0D0D0",
-        selectedColor : "#ff0477ff"
-      })
-      Text('Outset Discrete Slider').fontSize(20).fontColor("black").width('90%')
-      SliderDiscrete({
-        sliderType : "outset",
-        min : 1000,
-        max: 10000,
-        step : 1000,
-        showSteps : true,
-        showTips : true,
-        outSetValue : 3000,
-        trackThickness : 8,
-        blockColor : "#ff0477ff",
-        trackColor : "#D0D0D0",
-        selectedColor : "#ff0477ff"
-      })
-      Text('Inset Discrete Slider').fontSize(20).fontColor("black").width('90%')
-      SliderDiscrete({
-        sliderType : "inset",
-        min : 0,
-        max: 100,
-        step : 10,
-        showSteps : true,
-        showTips : true,
-        inSetValue : 40,
-        trackThickness : 15,
-        blockColor : Color.White,
-        trackColor :  "#D0D0D0",
-        selectedColor : "#ff0477ff"
-      })
-    }.width('100%').padding({ left:5, right:5 })
+    Scroll(this.scroller) {
+      Column() {
+        Text(this.message)
+          .fontSize('25fp')
+          .fontWeight(FontWeight.Bold)
+          .padding('20vp')
+        Row() {
+          Divider()
+            .color("#D0D0D0")
+            .strokeWidth('5vp')
+            .opacity(60)
+            .shadow({ radius: 15, color: "#D0D0D0", offsetY: 8 })
+            .lineCap(LineCapStyle.Round)
+        }.height('5%')
+
+        Row() {
+          Column() {
+            Button('Continuous-outset')
+              .margin('5vp')
+              .type(ButtonType.Normal)
+              .borderRadius('2vp')
+              .fontColor(Color.Black)
+              .backgroundColor("#D0D0D0")
+              .onClick(() => {
+                this.isShow1 = !this.isShow1
+                this.isShow2 = false
+                this.isShow3 = false
+                this.isShow4 = false
+              })
+            Button('Continuous-inset')
+              .margin('5vp')
+              .type(ButtonType.Normal)
+              .borderRadius('2vp')
+              .fontColor(Color.Black)
+              .backgroundColor("#D0D0D0")
+              .onClick(() => {
+                this.isShow2 = !this.isShow2
+                this.isShow1 = false
+                this.isShow3 = false
+                this.isShow4 = false
+              })
+          }
+
+          Column() {
+            Button('Discrete-outset')
+              .margin('5vp')
+              .type(ButtonType.Normal)
+              .borderRadius('2vp')
+              .fontColor(Color.Black)
+              .backgroundColor("#D0D0D0")
+              .onClick(() => {
+                this.isShow3 = !this.isShow3
+                this.isShow2 = false
+                this.isShow1 = false
+                this.isShow4 = false
+              })
+            Button('Discrete-inset')
+              .margin('5vp')
+              .type(ButtonType.Normal)
+              .borderRadius('2vp')
+              .fontColor(Color.Black)
+              .backgroundColor("#D0D0D0")
+              .onClick(() => {
+                this.isShow4 = !this.isShow4
+                this.isShow2 = false
+                this.isShow3 = false
+                this.isShow1 = false
+              })
+          }
+        }.margin({ bottom: '10vp' })
+
+        if (this.isShow1) {
+          Text('Outset Continuous Slider').fontSize('20fp').fontColor("black").width('90%')
+          MaterialSlider({
+            obj: this.sliderModel1,
+            onSliderChange: this.onSliderChange
+          })
+        }
+        if (this.isShow2) {
+          Text('Inset continuous Slider').fontSize('20fp').fontColor("black").width('90%')
+          MaterialSlider({
+            obj: this.sliderModel2,
+            onSliderChange: this.onSliderChange
+          })
+        }
+        if (this.isShow3) {
+          Text('Outset Discrete Slider').fontSize('20fp').fontColor("black").width('90%')
+          MaterialSlider({
+            obj: this.sliderModel3,
+            onSliderChange: this.onSliderChange
+          })
+        }
+        if (this.isShow4) {
+          Text('Inset Discrete Slider').fontSize('20fp').fontColor("black").width('90%')
+          MaterialSlider({
+            obj: this.sliderModel4,
+            onSliderChange: this.onSliderChange
+          })
+        }
+      }.width('100%').padding({ left: '5vp', right: '5vp' })
+    }.scrollable(ScrollDirection.Vertical).scrollBar(BarState.On)
   }
 }

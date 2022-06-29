@@ -9,5 +9,7 @@
   "description": "example description",
   "repository": {},
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "@ohos/materialslider": "file:../material-slider"
+  }
 }

@@ -12,7 +12,6 @@
   "dependencies": {
     "hypium": "^1.0.0",
     "@ohos/hvigor": "1.0.6",
-    "@ohos/hvigor-ohos-plugin": "1.0.6",
-    "@ohos/libSlider": "file:libSlider"
+    "@ohos/hvigor-ohos-plugin": "1.0.6"
   }
 }
