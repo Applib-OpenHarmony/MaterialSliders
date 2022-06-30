@@ -64,7 +64,7 @@ MaterialSlider({
 })
 ```
 
-![outset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
+![outset](https://github.com/Applib-OpenHarmony/MaterialSliders/blob/main/screenshot/outsetSlider.png)
 
 ##### 2. Inset
 
@@ -103,7 +103,7 @@ MaterialSlider({
 })
 ```
 
-![inset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
+![inset](https://github.com/Applib-OpenHarmony/MaterialSliders/blob/main/screenshot/insetSlider.png)
 
 ## Discrete Slider
 
@@ -148,7 +148,7 @@ MaterialSlider({
 })            
 ```
 
-![outset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider_dis.png)
+![outset_dis](https://github.com/Applib-OpenHarmony/MaterialSliders/blob/main/screenshot/outsetSlider_dis.png)
 
 ##### 2. Inset
 
@@ -187,7 +187,7 @@ MaterialSlider({
 })            
 ```
 
-![inset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider_dis.png)
+![inset_dis](https://github.com/Applib-OpenHarmony/MaterialSliders/blob/main/screenshot/insetSlider_dis.png)
 
 ## Compatibility
 
@@ -195,4 +195,4 @@ Supports OpenHarmony API version 8
 
 ### Reference:
 
-Design by : Bibek Lakra
+Designed by : Bibek Lakra
