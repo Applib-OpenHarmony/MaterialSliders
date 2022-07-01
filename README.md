@@ -6,7 +6,7 @@ ETS slider which are already present in OpenHarmony API version 8, along with so
 ## Installation
 
 ```ets 
-npm i @ohos/materialslider
+npm i @ohos/MaterialSlider
 ```
 
 ## Usage Instruction
@@ -14,7 +14,7 @@ npm i @ohos/materialslider
 To be able to use sliders, below import statement should be used
 
 ```ets
-import { MaterialSlider, SliderModel, SliderType } from '@ohos/materialslider'
+import { MaterialSlider, SliderModel, SliderType } from '@ohos/MaterialSlider'
 ```
 
 Access slider attributes through a object of SliderModel and customize the slider(if needed) using setter functions as
@@ -24,7 +24,7 @@ shown and finally pass the object to MaterialSlider.
 ## Continuous Slider
 
 ```ets
-import { MaterialSlider, SliderModel, SliderType }  from '@ohos/materialslider'
+import { MaterialSlider, SliderModel, SliderType }  from '@ohos/MaterialSlider'
 ```
 
 ##### 1. Outset
@@ -108,7 +108,7 @@ MaterialSlider({
 ## Discrete Slider
 
 ```ets
-import { MaterialSlider, SliderModel, SliderType }  from '@ohos/materialslider'
+import { MaterialSlider, SliderModel, SliderType }  from '@ohos/MaterialSlider'
 ```
 
 ##### 1. Outset

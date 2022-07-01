@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { SliderModel, SliderType } from './sliderModel'
+import { SliderModel} from './sliderModel'
 
 @Component
 export struct MaterialSlider {

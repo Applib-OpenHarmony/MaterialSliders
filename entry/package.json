@@ -10,6 +10,6 @@
   "repository": {},
   "license": "ISC",
   "dependencies": {
-    "@ohos/materialslider": "file:../material-slider"
+    "@ohos/MaterialSlider": "file:../MaterialSlider"
   }
 }

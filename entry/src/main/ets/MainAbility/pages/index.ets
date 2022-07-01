@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { MaterialSlider, SliderModel, SliderType }  from '@ohos/materialslider'
+import { MaterialSlider, SliderModel, SliderType }  from '@ohos/MaterialSlider'
 
 @Entry
 @Component
@@ -107,7 +107,6 @@ struct Index {
             .shadow({ radius: 15, color: "#D0D0D0", offsetY: 8 })
             .lineCap(LineCapStyle.Round)
         }.height('5%')
-
         Row() {
           Column() {
             Button('Continuous-outset')
