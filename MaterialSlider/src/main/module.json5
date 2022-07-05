@@ -1,0 +1,11 @@
+{
+  "module": {
+    "name": "MaterialSlider",
+    "type": "har",
+    "deviceTypes": [
+      "phone",
+      "tablet"
+    ],
+    "uiSyntax": "ets"
+  }
+}

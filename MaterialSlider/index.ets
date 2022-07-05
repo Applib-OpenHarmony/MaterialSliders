@@ -12,4 +12,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export {MaterialSlider, SliderModel, SliderType  } from './src/main/ets/components/MaterialSlider/slider'
+export { MaterialSlider, SliderModel, SliderType } from './src/main/ets/components/MaterialSlider/slider'
