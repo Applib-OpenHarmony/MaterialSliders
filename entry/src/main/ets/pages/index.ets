@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { MaterialSlider, SliderModel, SliderType }  from '@ohos/MaterialSlider'
+import { MaterialSlider, SliderModel, SliderType }  from '@ohos/materialslider'
 
 @Entry
 @Component
