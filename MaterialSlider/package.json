@@ -1,0 +1,13 @@
+{
+  "name": "@ohos/materialslider",
+  "description": "a npm package which contains arkUI2.0 page",
+  "ohos": {
+    "org": ""
+  },
+  "version": "1.0.0",
+  "main": "src/main/ets/components/MaterialSlider/slider.ets",
+  "types": "",
+  "repository": {},
+  "license": "ISC",
+  "dependencies": {}
+}

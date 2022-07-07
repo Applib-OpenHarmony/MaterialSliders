@@ -107,7 +107,6 @@ struct Index {
             .shadow({ radius: 15, color: "#D0D0D0", offsetY: 8 })
             .lineCap(LineCapStyle.Round)
         }.height('5%')
-
         Row() {
           Column() {
             Button('Continuous-outset')
@@ -163,7 +162,7 @@ struct Index {
               })
           }
         }.margin({ bottom: '10vp' })
-
+        Slider()
         if (this.isShow1) {
           Text('Outset Continuous Slider').fontSize('20fp').fontColor("black").width('90%')
           MaterialSlider({

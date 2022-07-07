@@ -1,12 +1,12 @@
 # MaterialSliders
 
 It is a slider library in ETS. It contains two types of sliders - continuous and discrete and supports all attributes of
-ETS slider which are already present in OpenHarmony API version 8, along with some extra attributes.
+ETS slider which are already present in OpenHarmony API version 9, along with some extra attributes.
 
 ## Installation
 
 ```ets 
-npm i @ohos/materialslider
+npm i @ohos/MaterialSlider
 ```
 
 ## Usage Instruction
@@ -14,7 +14,7 @@ npm i @ohos/materialslider
 To be able to use sliders, below import statement should be used
 
 ```ets
-import { MaterialSlider, SliderModel, SliderType } from '@ohos/materialslider'
+import { MaterialSlider, SliderModel, SliderType } from '@ohos/MaterialSlider'
 ```
 
 Access slider attributes through a object of SliderModel and customize the slider(if needed) using setter functions as
@@ -24,7 +24,7 @@ shown and finally pass the object to MaterialSlider.
 ## Continuous Slider
 
 ```ets
-import { MaterialSlider, SliderModel, SliderType }  from '@ohos/materialslider'
+import { MaterialSlider, SliderModel, SliderType }  from '@ohos/MaterialSlider'
 ```
 
 ##### 1. Outset
@@ -64,7 +64,7 @@ MaterialSlider({
 })
 ```
 
-![outset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider.png)
+![outset](https://github.com/Applib-OpenHarmony/MaterialSliders/blob/main/screenshot/outsetSlider.png)
 
 ##### 2. Inset
 
@@ -103,12 +103,12 @@ MaterialSlider({
 })
 ```
 
-![inset](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider.png)
+![inset](https://github.com/Applib-OpenHarmony/MaterialSliders/blob/main/screenshot/insetSlider.png)
 
 ## Discrete Slider
 
 ```ets
-import { MaterialSlider, SliderModel, SliderType }  from '@ohos/materialslider'
+import { MaterialSlider, SliderModel, SliderType }  from '@ohos/MaterialSlider'
 ```
 
 ##### 1. Outset
@@ -148,7 +148,7 @@ MaterialSlider({
 })            
 ```
 
-![outset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/outsetSlider_dis.png)
+![outset_dis](https://github.com/Applib-OpenHarmony/MaterialSliders/blob/main/screenshot/outsetSlider_dis.png)
 
 ##### 2. Inset
 
@@ -187,7 +187,7 @@ MaterialSlider({
 })            
 ```
 
-![inset_dis](https://github.com/BibekLakra91/Material_UI_Sliders/blob/main/screenshot/insetSlider_dis.png)
+![inset_dis](https://github.com/Applib-OpenHarmony/MaterialSliders/blob/main/screenshot/insetSlider_dis.png)
 
 ## Compatibility
 
@@ -195,4 +195,4 @@ Supports OpenHarmony API version 8
 
 ### Reference:
 
-Design by : Bibek Lakra
+Designed by : Bibek Lakra

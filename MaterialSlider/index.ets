@@ -12,11 +12,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export default {
-  onCreate() {
-    console.info('Application onCreate')
-  },
-  onDestroy() {
-    console.info('Application onDestroy')
-  },
-}
+export { MaterialSlider, SliderModel, SliderType } from './src/main/ets/components/MaterialSlider/slider'
